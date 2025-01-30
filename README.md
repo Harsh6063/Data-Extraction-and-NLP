@@ -87,8 +87,64 @@ Install all dependencies using:
 ```bash
 pip install -r requirements.txt
 ```
+## **6. Stopwords Folder**
+In the project, we used a `stopwords` folder containing `.txt` files to remove common stopwords from the extracted articles. Each stopword file contains a list of words, and these are loaded dynamically to filter out unimportant words from the text.
 
-## **6. Expected Output Format**
+## **7. Metrics Used for Sentiment and Readability Analysis**
+To obtain the expected output, we used several metrics:
+
+### 1. **Positive/Negative Score**
+These scores are calculated based on the presence of positive and negative words from predefined files (`positive-words.txt` and `negative-words.txt`). Each word in the article that matches a word in these lists contributes to the positive or negative score.
+
+### 2. **Polarity Score**
+The polarity score ranges from -1 to 1, indicating whether the sentiment of the text is negative or positive. A score of 1 means the text is highly positive, and -1 means it's highly negative.
+
+### 3. **Subjectivity Score**
+This score ranges from 0 to 1, where 0 is entirely objective (factual) and 1 is completely subjective (opinion-based). It is calculated based on the use of subjective phrases and opinions in the text.
+
+### 4. **Average Sentence Length**
+The average sentence length is calculated using the formula:  
+    ```text
+    
+    Average Sentence Length = (Total Number of Words) / (Total Number of Sentences)
+### 5. **Percentage of Complex Words**
+Complex words are words that contain more than two syllables. The percentage of complex words is calculated by:
+    ```text
+    
+    Percentage of Complex Words = (Number of Complex Words) / (Total Number of Words)
+
+### 6. **Fog Index**
+The Fog Index is calculated using the formula:
+    ```text
+    
+    Fog Index = 0.4 * (Average Sentence Length + Percentage of Complex Words)
+A higher Fog Index indicates more complex text.
+
+### 7. ** Average Number of Words Per Sentence**
+This is calculated by dividing the total number of words by the total number of sentences:
+
+ 
+    ```text
+    Average Number of Words Per Sentence = (Total Number of Words) / (Total Number of Sentences)
+
+
+### 8. **Syllable Count Per Word**
+Syllable count per word is determined by counting the vowels present in each word and applying rules for exceptions like words ending in "es" or "ed." The total syllable count per word is then averaged for the entire text.
+   
+### 9. **Personal Pronouns**
+Personal pronouns are identified using regular expressions to match the words "I," "we," "my," "ours," and "us".
+    ```text
+    
+    Average Sentence Length = (Total Number of Words) / (Total Number of Sentences)
+### 10. **Average Word Length**
+Average word length is calculated by the formula:
+    ```text
+    
+    Average Word Length = (Sum of the total number of characters in each word) / (Total Number of Words)
+
+
+
+## **8. Expected Output Format**
 The final Excel file `sentiment_analysis.xlsx` will have the following columns:
 
 | Article Content | Positive Score | Negative Score | Polarity Score | Subjectivity Score | Avg Sentence Length | Percent Complex Words | Fog Index | Syllable Per Word | Personal Pronouns | Avg Word Length |
@@ -97,7 +153,7 @@ The final Excel file `sentiment_analysis.xlsx` will have the following columns:
 | "This is a terrible experience." | 0 | 1 | -1.0 | 0.2 | 4.0 | 0.1 | 1.64 | 1.2 | 1 | 4.0 |
 
 
-## **7. Summary**
+## **9. Summary**
 - **Extract text** using Scrapy.
 - **Clean the text** (remove stopwords, punctuation, lowercase).
 - **Perform sentiment analysis** (Positive/Negative Score, Polarity, Subjectivity).
