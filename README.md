@@ -120,7 +120,7 @@ The Fog Index is calculated using the formula:
     Fog Index = 0.4 * (Average Sentence Length + Percentage of Complex Words)
 A higher Fog Index indicates more complex text.
 
-### 7. ** Average Number of Words Per Sentence**
+### 7. **Average Number of Words Per Sentence**
 This is calculated by dividing the total number of words by the total number of sentences:
 
  
