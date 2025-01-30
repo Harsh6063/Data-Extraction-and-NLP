@@ -1,5 +1,4 @@
 # Data-Extraction-and-NLP
-# Sentiment Analysis & Readability Metrics Project
 
 ## **Overview**
 This project extracts article content from multiple websites using Scrapy, cleans the text by removing stopwords, and performs sentiment and readability analysis. The final output is saved in an Excel file.
@@ -21,8 +20,8 @@ pip install scrapy
 Create a new directory for the project and navigate into it:
 
 ```bash
-mkdir sentiment_analysis_project
-cd sentiment_analysis_project
+mkdir Data-Extraction-and-NLP
+cd Data-Extraction-and-NLP
 ```
 
 Initialize a Scrapy project:
@@ -97,60 +96,8 @@ The final Excel file `sentiment_analysis.xlsx` will have the following columns:
 | "The product is excellent and well-designed." | 2 | 0 | 1.0 | 0.4 | 5.0 | 0.2 | 2.08 | 1.5 | 0 | 4.2 |
 | "This is a terrible experience." | 0 | 1 | -1.0 | 0.2 | 4.0 | 0.1 | 1.64 | 1.2 | 1 | 4.0 |
 
-## **7. Troubleshooting Common Issues**
 
-1. **Scrapy Output Format Error**  
-   - Ensure the output format is compatible (`.json`, `.csv`, `.xml`, `.xlsx`).  
-   - If using `.xlsx`, use **pandas** to convert the output.
-
-2. **Module Not Found (`article_scraper`)**
-   - Run the script from the correct directory.
-   - Use `sys.path.append()` in Python to add missing module paths.
-
-3. **Encoding Errors (`'utf-8' codec can't decode byte` Error)**
-   - Open text files with encoding handling:
-     ```python
-     with open("stopwords.txt", "r", encoding="utf-8", errors="ignore") as f:
-         stopwords = f.read().splitlines()
-     ```
-
-4. **Scrapy Not Extracting Content**
-   - Ensure the correct **CSS/XPath selectors** are used.
-   - Check if the website requires **headers or cookies** for access.
-
-## **8. Running the Full Pipeline in One Go**
-To automate the entire process, create a shell script `run_pipeline.sh` (Linux/macOS):
-
-```bash
-#!/bin/bash
-
-scrapy crawl article_spider -o extracted_articles.xlsx
-python clean_text.py
-python sentiment_analysis.py
-```
-
-Run it using:
-
-```bash
-bash run_pipeline.sh
-```
-
-For Windows, create a batch script `run_pipeline.bat`:
-
-```batch
-@echo off
-scrapy crawl article_spider -o extracted_articles.xlsx
-python clean_text.py
-python sentiment_analysis.py
-```
-
-Run it by executing:
-
-```cmd
-run_pipeline.bat
-```
-
-## **9. Summary**
+## **7. Summary**
 - **Extract text** using Scrapy.
 - **Clean the text** (remove stopwords, punctuation, lowercase).
 - **Perform sentiment analysis** (Positive/Negative Score, Polarity, Subjectivity).
