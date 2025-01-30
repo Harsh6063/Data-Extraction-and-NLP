@@ -104,18 +104,18 @@ This score ranges from 0 to 1, where 0 is entirely objective (factual) and 1 is 
 
 ### 4. **Average Sentence Length**
 The average sentence length is calculated using the formula:  
-    ```text
+  
     
     Average Sentence Length = (Total Number of Words) / (Total Number of Sentences)
 ### 5. **Percentage of Complex Words**
 Complex words are words that contain more than two syllables. The percentage of complex words is calculated by:
-    ```text
+  
     
     Percentage of Complex Words = (Number of Complex Words) / (Total Number of Words)
 
 ### 6. **Fog Index**
 The Fog Index is calculated using the formula:
-    ```text
+   
     
     Fog Index = 0.4 * (Average Sentence Length + Percentage of Complex Words)
 A higher Fog Index indicates more complex text.
@@ -124,7 +124,7 @@ A higher Fog Index indicates more complex text.
 This is calculated by dividing the total number of words by the total number of sentences:
 
  
-    ```text
+   
     Average Number of Words Per Sentence = (Total Number of Words) / (Total Number of Sentences)
 
 
@@ -133,12 +133,12 @@ Syllable count per word is determined by counting the vowels present in each wor
    
 ### 9. **Personal Pronouns**
 Personal pronouns are identified using regular expressions to match the words "I," "we," "my," "ours," and "us".
-    ```text
+   
     
     Average Sentence Length = (Total Number of Words) / (Total Number of Sentences)
 ### 10. **Average Word Length**
 Average word length is calculated by the formula:
-    ```text
+    
     
     Average Word Length = (Sum of the total number of characters in each word) / (Total Number of Words)
 
