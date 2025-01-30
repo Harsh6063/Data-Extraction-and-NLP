@@ -44,7 +44,7 @@ Place your spider script inside the `spiders/` folder.
    - Extracted data is saved in `extracted_articles.xlsx`.
 
 2. **Cleaning Extracted Text**  
-   - We process the scraped text to remove stopwords from `stopwords.txt`.
+   - We process the scraped text to remove stopwords from putting all the stopwords file in the `stopwords` folder each ending with `.txt`  .
    - The text is tokenized, converted to lowercase, and unnecessary punctuation is removed.
    - Cleaned data is saved in `cleaned_articles.xlsx`.
 
