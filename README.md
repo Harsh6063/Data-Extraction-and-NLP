@@ -160,5 +160,4 @@ The final Excel file `sentiment_analysis.xlsx` will have the following columns:
 - **Compute readability metrics** (Fog Index, Syllable Count, etc.).
 - **Save final results** in `sentiment_analysis.xlsx`.
 
-Now you have a complete step-by-step guide to running the project! 🚀
 
